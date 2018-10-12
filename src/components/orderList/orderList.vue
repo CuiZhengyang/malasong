@@ -2,7 +2,8 @@
   <div id="ol">
     <div class="head">
       <img src="../../assets/img/rear@3x.png" width="100%" alt="">
-      <a class="button">
+
+      <a class="button" @click="go">
         <img src="../../assets/img/photo.png" alt="">
       </a>
     </div>
@@ -24,7 +25,7 @@
     </div>
     <div class="content">
       <div class="mainContent ">
-        <yd-pullrefresh :callback="refresh" ref="pullrefreshDemo">
+        <yd-pullrefresh :callback="refresh" ref="pullrefreshDemo" :show-init-tip="false">
           <yd-infinitescroll :callback="loadMore" ref="infinitescrollDemo">
             <!--显示一条条数据-->
             <div slot="list" class="record" v-for="(item,index) in list">
@@ -34,10 +35,10 @@
                   <label class="font2">{{showWeek2(item,index)}}</label>
                 </div>
                 <div class="typeIcon">
-                  <i :class="getmerchTp(item.merchTp)"></i>
+                  <i :class="getmerchtp(item.merchtp)"></i>
                 </div>
                 <div class="recordContent">
-                  <label class="font1">{{getTypeName(item.merchTp)}}}</label>
+                  <label class="font1">{{getTypeName(item.merchtp)}}</label>
                   <label class="font2">{{item.merchName}}</label>
                 </div>
                 <div class="recordMoney">
@@ -57,6 +58,7 @@
 
 <script>
   import config from "../../config/config"
+  import {beforeEnterRouter} from "../../request/request"
   export default {
     name: "order-list",
     data: function () {
@@ -68,65 +70,65 @@
           {
             "cardNo": "6200000000000001",
             "payDate": "20181001",
-            "payTime": "周三",
+            "paytime": "周三",
             "amount": "10.0",
-            "merchTp": "01",
+            "merchtp": "01",
             "merchName": "familyMart"
           },
           {
             "cardNo": "6200000000000002",
             "payDate": "20181001",
-            "payTime": "周三",
+            "paytime": "周三",
             "amount": "20.0",
-            "merchTp": "02",
+            "merchtp": "02",
             "merchName": "train"
           },
           {
             "cardNo": "6200000000000001",
             "payDate": "20181001",
-            "payTime": "周三",
+            "paytime": "周三",
             "amount": "10.0",
-            "merchTp": "01",
+            "merchtp": "01",
             "merchName": "familyMart"
           },
           {
             "cardNo": "6200000000000002",
             "payDate": "20181001",
-            "payTime": "周三",
+            "paytime": "周三",
             "amount": "20.0",
-            "merchTp": "02",
+            "merchtp": "02",
             "merchName": "train"
           },
           {
             "cardNo": "6200000000000001",
             "payDate": "20181002",
-            "payTime": "周四",
+            "paytime": "周四",
             "amount": "10.0",
-            "merchTp": "01",
+            "merchtp": "01",
             "merchName": "familyMart"
           },
           {
             "cardNo": "6200000000000002",
             "payDate": "20181002",
-            "payTime": "周四",
+            "paytime": "周四",
             "amount": "20.0",
-            "merchTp": "02",
+            "merchtp": "02",
             "merchName": "train"
           },
           {
             "cardNo": "6200000000000001",
             "payDate": "20181002",
-            "payTime": "周四",
+            "paytime": "周四",
             "amount": "10.0",
-            "merchTp": "01",
+            "merchtp": "01",
             "merchName": "familyMart"
           },
           {
             "cardNo": "6200000000000002",
             "payDate": "20181002",
-            "payTime": "周四",
+            "paytime": "周四",
             "amount": "20.0",
-            "merchTp": "02",
+            "merchtp": "02",
             "merchName": "train"
           }
         ],
@@ -135,6 +137,7 @@
     },
     created: function () {
       this.$nextTick(() => {
+        beforeEnterRouter("交易记录")
         this.refresh();
       })
     },
@@ -147,7 +150,7 @@
             endDate: this.$data.endTime,
             bigAmount: arr[0],
             smallAmount: arr[1],
-            merchTp: this.$store.state.merchTpList.join("|"),
+            merchtp: this.$store.state.merchTpList.join("|"),
             page: 0,
             pagesize: config.const.pagesize
           }
@@ -167,7 +170,7 @@
             endDate: this.$data.endTime,
             bigAmount: arr[0],
             smallAmount: arr[1],
-            merchTp: this.$store.state.merchTpList.join("|"),
+            merchtp: this.$store.state.merchTpList.join("|"),
             page: this.page,
             pagesize: config.const.pagesize
           }).then(function ({data}) {
@@ -219,17 +222,17 @@
         }
 
         if (index == 0) {
-          return item.payTime
+          return item.paytime
         }
         else if (pre.payDate != item.payDate) {
-          return item.payTime
+          return item.paytime
         }
         else {
           return ""
         }
 
       },
-      getmerchTp(type) {
+      getmerchtp(type) {
         switch (type) {
           case "01":
             return "Artboard1";
@@ -258,6 +261,9 @@
           default:
             return ""
         }
+      },
+      go(){
+        this.$router.push({path: "/tables"})
       }
     },
 

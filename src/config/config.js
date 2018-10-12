@@ -3,7 +3,7 @@ var rootdir = "/application"
 var config = {
   rootdir:"/facepayWX/",
   url: {
-    getSelectList: rootdir + "/DBTest",
+    getSelectList: rootdir + "/request/data",
   },
   accessId:{
     weixin:"12345678901234567890",

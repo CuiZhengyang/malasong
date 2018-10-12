@@ -112,6 +112,25 @@ export const get = (url, data, config = {}) => request(Object.assign({url, data}
 export const post = (url, data, config = {}) => request(Object.assign({method: 'POST', url, data}, config));
 
 
+export const beforeEnterRouter = (title = "", rightBar = "", rightCallback = null, rightBarImg = null) => {
+  document.title = title;
+  const app = UP.W.App;
+  app.onPluginReady(() => {
+    app.setNavigationBarTitle(title)
+    /**
+     * 设置窗口右侧按钮
+     * @param title 图标标题
+     * @param image 图标文件
+     * @param handler 点击回调函数
+     */
+    if (!!rightCallback) {
+      app.setNavigationBarRightButton(rightBar, rightBarImg, rightCallback)
+    }
+    else {
+      app.setNavigationBarRightButton("", null, null)
+    }
+  })
+}
 
 
 // Config
