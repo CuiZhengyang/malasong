@@ -116,11 +116,11 @@
         let arr = this.$store.state.mountList.split("|")
         this.$store.dispatch("getSelectList", {
             cardNo: this.$store.state.cardList,
-            startDate: this.$data.startTime,
-            endDate: this.$data.endTime,
+            startDate: this.$route.query.startDate,
+            endDate: this.$route.query.endDate,
             bigAmount: arr[0],
             smallAmount: arr[1],
-            merchtp: this.$store.state.merchTpList.join("|"),
+            merchtp: this.$route.query.merchtp,
             page: 0,
             pagesize: config.const.pagesize
           }
@@ -136,11 +136,11 @@
           let arr = this.$store.state.mountList.split("|")
           this.$store.dispatch("getSelectList", {
             cardNo: this.$store.state.cardList,
-            startDate: this.$data.startTime,
-            endDate: this.$data.endTime,
+            startDate: this.$route.query.startDate,
+            endDate: this.$route.query.endDate,
             bigAmount: arr[0],
             smallAmount: arr[1],
-            merchtp: this.$store.state.merchTpList.join("|"),
+            merchtp: this.$route.query.merchtp,
             page: this.page,
             pagesize: config.const.pagesize
           }).then(function ({data}) {

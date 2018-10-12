@@ -64,8 +64,8 @@
     data: function () {
       return {
         showSelect: false,
-        startTime: "2017-05-11",
-        endTime: "2017-05-11",
+        startTime: "",
+        endTime: "",
         list: [
           {
             "cardNo": "6200000000000001",
@@ -140,6 +140,15 @@
         beforeEnterRouter("交易记录")
         this.refresh();
       })
+    },
+    mounted(){
+      let date=new Date();
+      let year=date.getFullYear();
+      let month=date.getMonth()+1<10?"0"+(date.getMonth()+1):date.getMonth()+1;
+      let day=date.getDay()+1<10?"0"+(date.getDay()+1):date.getDay()+1;
+
+      this.$data.startTime=year+"-"+month+"-01";
+      this.$data.endTime=year+"-"+month+"-"+day;
     },
     methods: {
       refresh() {
