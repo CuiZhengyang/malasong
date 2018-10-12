@@ -14,17 +14,17 @@ for (var dev in ifaces) {
   });
 }
 let ip = "127.0.0.1";
-if(iptable.length==1)
-{
-  ip=iptable[0]
-}
-else{
-  iptable.forEach((item,index)=>{
-    if(item.startsWith("172.")||item.startsWith("192.")||item.startsWith("168.")){
-      ip=iptable[index]
-    }
-  })
-}
+// if(iptable.length==1)
+// {
+//   ip=iptable[0]
+// }
+// else{
+//   iptable.forEach((item,index)=>{
+//     if(item.startsWith("172.")||item.startsWith("192.")||item.startsWith("168.")){
+//       ip=iptable[index]
+//     }
+//   })
+// }
 
 module.exports = {
   dev: {
