@@ -33,8 +33,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/facepayWX/',
     proxyTable: {
-      '/bioauth': {
-        target: 'http://172.18.68.117',
+      '/application': {
+        target: 'http://172.18.3.162:8011',
         // target: "http://172.21.32.153:12000",
         // target: 'https://facepay.95516.com',
         changeOrigin: true,
