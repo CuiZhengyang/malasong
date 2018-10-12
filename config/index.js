@@ -31,7 +31,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/facepayWX/',
+    assetsPublicPath: '/recorder/',
     proxyTable: {
       '/application': {
         target: 'http://172.18.3.162:8011',
@@ -74,12 +74,12 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../facepayWX/index.html'),
+    index: path.resolve(__dirname, '../recorder/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../facepayWX'),
+    assetsRoot: path.resolve(__dirname, '../recorder'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/facepayWX/',
+    assetsPublicPath: '/recorder/',
 
     /**
      * Source Maps

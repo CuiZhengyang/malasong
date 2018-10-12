@@ -14,9 +14,9 @@ let startTime=year+"-"+month+"-01";
 let endTime=year+"-"+month+"-"+day;
 
 let state = {
-  cardList: ['6200000000000001'],
+  cardList: ['6200000000000001','6200000000000002','6200000000000003','6200000000000004'],
   mountList: '0|100',
-  merchTpList:['01'],
+  merchTpList:['01','02','03','04','05'],
   startTime:startTime,
   endTime:endTime
 };
