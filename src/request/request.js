@@ -132,7 +132,43 @@ export const beforeEnterRouter = (title = "", rightBar = "", rightCallback = nul
   })
 }
 
+export const share = (title, desc, imgURL, pageURl) => {
+  const app = UP.W.App;
+  var env = UP.W.Env || {};
 
+  app.onPluginReady(function () {
+
+    /**
+     * 显示分享面板
+     * 如果所有渠道使用相同的分享内容则仅填写params即可，
+     * 如果需要根据不同渠道定制分享内容，则可params留空，在shareCallback中返回指定渠道的分享内容
+     * @param params 分享参数
+     *              {
+         *                  title： 分享标题
+         *                  desc: 分享摘要
+         *                  picUrl：分享图标
+         *                  shareUrl：详情地址
+         *              }
+     * @param shareCallback 分享时回调
+     *              channel：{
+         *                  0：短信
+         *                  1：新浪微博
+         *                  3：微信好友
+         *                  4：微信朋友圈
+         *                  5：QQ好友
+         *                  6：QQ空间
+         *                  7：复制链接
+         *              }
+     *              data: 默认分享数据
+     */
+    app.showSharePanel({
+      title: title,
+      desc: desc,
+      picUrl: imgURL,
+      shareUrl: pageURl  // todo 普通分享
+    }, null)
+  });
+}
 // Config
 //
 // Parameter	Type	Description

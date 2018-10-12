@@ -39,70 +39,70 @@
     data: function () {
       return {
         list: [
-          {
-            "cardNo": "6200000000000001",
-            "payDate": "20181001",
-            "paytime": "周三",
-            "amount": "10.0",
-            "merchtp": "01",
-            "merchName": "familyMart"
-          },
-          {
-            "cardNo": "6200000000000002",
-            "payDate": "20181001",
-            "paytime": "周三",
-            "amount": "20.0",
-            "merchtp": "02",
-            "merchName": "train"
-          },
-          {
-            "cardNo": "6200000000000001",
-            "payDate": "20181001",
-            "paytime": "周三",
-            "amount": "10.0",
-            "merchtp": "01",
-            "merchName": "familyMart"
-          },
-          {
-            "cardNo": "6200000000000002",
-            "payDate": "20181001",
-            "paytime": "周三",
-            "amount": "20.0",
-            "merchtp": "02",
-            "merchName": "train"
-          },
-          {
-            "cardNo": "6200000000000001",
-            "payDate": "20181002",
-            "paytime": "周四",
-            "amount": "10.0",
-            "merchtp": "01",
-            "merchName": "familyMart"
-          },
-          {
-            "cardNo": "6200000000000002",
-            "payDate": "20181002",
-            "paytime": "周四",
-            "amount": "20.0",
-            "merchtp": "02",
-            "merchName": "train"
-          },
-          {
-            "cardNo": "6200000000000001",
-            "payDate": "20181002",
-            "paytime": "周四",
-            "amount": "10.0",
-            "merchtp": "01",
-            "merchName": "familyMart"
-          },
-          {
-            "cardNo": "6200000000000002",
-            "payDate": "20181002",
-            "paytime": "周四",
-            "amount": "20.0",
-            "merchtp": "02",
-            "merchName": "train"
-          }
+          // {
+          //   "cardNo": "6200000000000001",
+          //   "payDate": "20181001",
+          //   "paytime": "周三",
+          //   "amount": "10.0",
+          //   "merchtp": "01",
+          //   "merchName": "familyMart"
+          // },
+          // {
+          //   "cardNo": "6200000000000002",
+          //   "payDate": "20181001",
+          //   "paytime": "周三",
+          //   "amount": "20.0",
+          //   "merchtp": "02",
+          //   "merchName": "train"
+          // },
+          // {
+          //   "cardNo": "6200000000000001",
+          //   "payDate": "20181001",
+          //   "paytime": "周三",
+          //   "amount": "10.0",
+          //   "merchtp": "01",
+          //   "merchName": "familyMart"
+          // },
+          // {
+          //   "cardNo": "6200000000000002",
+          //   "payDate": "20181001",
+          //   "paytime": "周三",
+          //   "amount": "20.0",
+          //   "merchtp": "02",
+          //   "merchName": "train"
+          // },
+          // {
+          //   "cardNo": "6200000000000001",
+          //   "payDate": "20181002",
+          //   "paytime": "周四",
+          //   "amount": "10.0",
+          //   "merchtp": "01",
+          //   "merchName": "familyMart"
+          // },
+          // {
+          //   "cardNo": "6200000000000002",
+          //   "payDate": "20181002",
+          //   "paytime": "周四",
+          //   "amount": "20.0",
+          //   "merchtp": "02",
+          //   "merchName": "train"
+          // },
+          // {
+          //   "cardNo": "6200000000000001",
+          //   "payDate": "20181002",
+          //   "paytime": "周四",
+          //   "amount": "10.0",
+          //   "merchtp": "01",
+          //   "merchName": "familyMart"
+          // },
+          // {
+          //   "cardNo": "6200000000000002",
+          //   "payDate": "20181002",
+          //   "paytime": "周四",
+          //   "amount": "20.0",
+          //   "merchtp": "02",
+          //   "merchName": "train"
+          // }
         ],
         page: 0,
       }
