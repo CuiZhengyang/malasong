@@ -33,6 +33,7 @@
 
 <script>
   import config from "../../config/config"
+
   export default {
     name: "show-detail",
     data: function () {
@@ -115,11 +116,11 @@
       refresh() {
         let arr = this.$store.state.mountList.split("|")
         this.$store.dispatch("getSelectList", {
-            cardNo: this.$store.state.cardList,
-            startDate: this.$route.query.startDate,
-            endDate: this.$route.query.endDate,
-            bigAmount: arr[0],
-            smallAmount: arr[1],
+            cardNo: this.$store.state.cardList.join("|"),
+            startDate: this.$store.state.startTime,
+            endDate: this.$store.state.endTime,
+            bigAmount: arr[1],
+            smallAmount: arr[0],
             merchtp: this.$route.query.merchtp,
             page: 0,
             pagesize: config.const.pagesize
@@ -135,11 +136,11 @@
         if (this.$data.list.length >= config.const.pagesize) {
           let arr = this.$store.state.mountList.split("|")
           this.$store.dispatch("getSelectList", {
-            cardNo: this.$store.state.cardList,
-            startDate: this.$route.query.startDate,
-            endDate: this.$route.query.endDate,
-            bigAmount: arr[0],
-            smallAmount: arr[1],
+            cardNo: this.$store.state.cardList.join("|"),
+            startDate: this.$store.state.startTime,
+            endDate: this.$store.state.endTime,
+            bigAmount: arr[1],
+            smallAmount: arr[0],
             merchtp: this.$route.query.merchtp,
             page: this.page,
             pagesize: config.const.pagesize

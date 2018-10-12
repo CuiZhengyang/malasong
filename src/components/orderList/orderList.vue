@@ -9,14 +9,14 @@
     </div>
     <div class="select content">
       <div class="column">
-        <yd-datetime type="date" class="time"
+        <yd-datetime type="date" class="time" :callback="refresh"
                      v-model="startTime"></yd-datetime>
       </div>
       <div class="centerLine">
         ~
       </div>
       <div class="column">
-        <yd-datetime type="date" class="time"
+        <yd-datetime type="date" class="time" :callback="refresh"
                      v-model="endTime"></yd-datetime>
       </div>
       <div class="column" @click="showSelectPanel" style="text-align: right">
@@ -64,8 +64,8 @@
     data: function () {
       return {
         showSelect: false,
-        startTime: "",
-        endTime: "",
+        // startTime: "",
+        // endTime: "",
         list: [
           {
             "cardNo": "6200000000000001",
@@ -137,28 +137,20 @@
     },
     created: function () {
       this.$nextTick(() => {
+
         beforeEnterRouter("交易记录")
         this.refresh();
       })
-    },
-    mounted(){
-      let date=new Date();
-      let year=date.getFullYear();
-      let month=date.getMonth()+1<10?"0"+(date.getMonth()+1):date.getMonth()+1;
-      let day=date.getDay()+1<10?"0"+(date.getDay()+1):date.getDay()+1;
-
-      this.$data.startTime=year+"-"+month+"-01";
-      this.$data.endTime=year+"-"+month+"-"+day;
     },
     methods: {
       refresh() {
         let arr=this.$store.state.mountList.split("|")
         this.$store.dispatch("getSelectList", {
-            cardNo: this.$store.state.cardList,
-            startDate: this.$data.startTime,
-            endDate: this.$data.endTime,
-            bigAmount: arr[0],
-            smallAmount: arr[1],
+            cardNo: this.$store.state.cardList.join("|"),
+            startDate: this.$store.state.startTime,
+            endDate: this.$store.state.endTime,
+            bigAmount: arr[1],
+            smallAmount: arr[0],
             merchtp: this.$store.state.merchTpList.join("|"),
             page: 0,
             pagesize: config.const.pagesize
@@ -174,11 +166,11 @@
         if (this.$data.list.length >= config.const.pagesize) {
           let arr=this.$store.state.mountList.split("|")
           this.$store.dispatch("getSelectList", {
-            cardNo: this.$store.state.cardList,
-            startDate: this.$data.startTime,
-            endDate: this.$data.endTime,
-            bigAmount: arr[0],
-            smallAmount: arr[1],
+            cardNo: this.$store.state.cardList.join("|"),
+            startDate: this.$store.state.startTime,
+            endDate: this.$store.state.endTime,
+            bigAmount: arr[1],
+            smallAmount: arr[0],
             merchtp: this.$store.state.merchTpList.join("|"),
             page: this.page,
             pagesize: config.const.pagesize
@@ -275,7 +267,29 @@
         this.$router.push({path: "/tables"})
       }
     },
-
+    computed:{
+      startTime:{
+        get: function () {
+          return this.$store.state.startTime;
+        },
+        // setter
+        set: function (newValue) {
+          console.log(newValue)
+          this.$store.commit("changeStartTime",newValue)
+          // this.$data.endTime=this.$store.state.endTime;
+        }
+      },
+      endTime:{
+        get: function () {
+          return this.$store.state.endTime;
+        },
+        // setter
+        set: function (newValue) {
+          console.log(newValue)
+          this.$store.commit("changeEndTime",newValue)
+        }
+      }
+    }
   }
 </script>
 
