@@ -14,17 +14,17 @@ for (var dev in ifaces) {
   });
 }
 let ip = "127.0.0.1";
-if(iptable.length==1)
-{
-  ip=iptable[0]
-}
-else{
-  iptable.forEach((item,index)=>{
-    if(item.startsWith("172.")||item.startsWith("192.")||item.startsWith("168.")){
-      ip=iptable[index]
-    }
-  })
-}
+// if(iptable.length==1)
+// {
+//   ip=iptable[0]
+// }
+// else{
+//   iptable.forEach((item,index)=>{
+//     if(item.startsWith("172.")||item.startsWith("192.")||item.startsWith("168.")){
+//       ip=iptable[index]
+//     }
+//   })
+// }
 
 module.exports = {
   dev: {
@@ -33,8 +33,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/facepayWX/',
     proxyTable: {
-      '/bioauth': {
-        target: 'http://172.18.68.117',
+      '/application': {
+        target: 'http://172.18.3.162:8011',
         // target: "http://172.21.32.153:12000",
         // target: 'https://facepay.95516.com',
         changeOrigin: true,

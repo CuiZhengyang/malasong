@@ -64,16 +64,111 @@
     border-radius: rem(12);
     overflow-y: auto;
 
-    .content-Tilte{
-      height: rem(36);
-      display: flex;
-      align-items: center;
-      span{
-        font-size: rem(14);
-        color: #222A37;
-        letter-spacing: rem(0.6);
-        line-height: rem(14);
+    .record{
+
+      padding: 0 rem(12);
+      .recordWarp{
+        display: flex;
+        height: rem(58);
+        //border-bottom: 1px solid #c6c6c6;
+
+        label{
+          display: block;
+        }
+
+        .week{
+          width: rem(36);
+          letter-spacing: rem(1.33);
+          text-align: center;
+
+          .font1{
+            font-size: rem(12);
+            color: #333333;
+            //text-align: center;
+            line-height: rem(12);
+            padding-top: rem(14);
+          }
+
+          .font2{
+            font-size: rem(8);
+            color: #3F3F3F;
+            line-height: rem(10);
+          }
+
+        }
+        .typeIcon{
+          width: rem(24);
+          i{
+            display: inline-block;
+            width: 100%;
+            height: rem(58);
+          }
+          .Artboard1{
+            background-image: url("../../assets/img/Artboard1.png");
+            background-size: cover;
+          }
+          .Artboard2{
+            background-image: url("../../assets/img/Artboard2.png");
+            background-size: cover;
+          }
+          .Artboard3{
+            background-image: url("../../assets/img/Artboard3.png");
+            background-size: cover;
+          }
+          .Artboard4{
+            background-image: url("../../assets/img/Artboard4.png");
+            background-size: cover;
+          }
+          .Artboard5{
+            background-image: url("../../assets/img/Artboard5.png");
+            background-size: cover;
+          }
+        }
+
+        .recordContent{
+          flex: 1;
+          padding-left: rem(9);
+          padding-top: rem(14);
+
+          .font1{
+            font-size: rem(14);
+            color: #333333;
+            letter-spacing: rem(0.6);
+            line-height: rem(14);
+          }
+          .font2{
+            margin-top: rem(8);
+            font-size: rem(12);
+            color: #666666;
+            letter-spacing: rem(0.6);
+            line-height: rem(12);
+          }
+        }
+
+        .recordMoney{
+          text-align: right;
+          width: rem(60);
+          padding-top: rem(14);
+
+          .font1{
+            font-size: rem(14);
+            color: #69B076;
+            line-height: rem(14);
+          }
+          .font2{
+            font-size: rem(12);
+            color: #999999;
+            letter-spacing: rem(0.6);
+            line-height: rem(12);
+            margin-top: rem(12);
+          }
+        }
       }
+
+
+
+
+
     }
 
   }

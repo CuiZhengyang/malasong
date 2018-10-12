@@ -27,8 +27,8 @@ Vue.component('swipeout-item', SwipeoutItem)
 Vue.component('swipeout-button', SwipeoutButton)
 
 
-
-
+import selectPlugin from "./components/selectPlugin/selectPlugin"
+Vue.component('selectPlugin', selectPlugin)
 
 //以阻止 vue 在启动时生成生产提示。
 Vue.config.productionTip = false;

@@ -1,25 +1,9 @@
 // var rootdir = "/bioauth-core-access-web/rest/wx"
-var rootdir = "/bioauth/rest/wx"
+var rootdir = "/application"
 var config = {
   rootdir:"/facepayWX/",
   url: {
-    isLogin: rootdir + "/isLogin",
-    sendMobile: rootdir + "/getMsgCode",
-    login: rootdir + "/submitCode",
-    schoolLogin: rootdir + "/studentLogin",
-    userInfo:rootdir+"/userInfo",
-    cardList:rootdir+"/cardList",
-    merList:rootdir+"/merList",
-    merAuth: rootdir + "/merAuth",
-    rmAuth:rootdir+"/rmAuth",
-    consumRecord:rootdir+"/consumRecord",
-    idCheck: rootdir + "/realAuth",
-    addCard: rootdir + "/bindCard",
-    delCard:rootdir+"/delCard",
-    setDefaultCard:rootdir+"/setDefaultCard",
-    shengWuRenZheng: rootdir + "/bioAuth",
-    getweixin: rootdir + "/getToken",
-    dicInfo: rootdir + "/dicInfo",
+    getSelectList: rootdir + "/DBTest",
   },
   accessId:{
     weixin:"12345678901234567890",

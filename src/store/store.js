@@ -6,7 +6,9 @@ import mutations from "./mutations"
 Vue.use(Vuex);
 
 let state = {
-
+  cardList: ['6200000000000001'],
+  mountList: '0|100',
+  merchTpList:['01']
 };
 
 const store = new Vuex.Store({
