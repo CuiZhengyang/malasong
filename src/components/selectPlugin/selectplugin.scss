@@ -1,0 +1,156 @@
+@import "../../assets/css/fonction.scss";
+.mask{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.5);
+
+  .selectWapper{
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: rem(483);
+    border-radius:rem(9) rem(9) 0 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+
+    .head{
+      height: rem(60);
+      border-bottom: 1px solid #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .left{
+        font-size: rem(15);
+        color: #333333;
+        letter-spacing: rem(1.5);
+        text-align: right;
+        line-height: rem(15);
+        padding-right: rem(18);
+        font-weight: bold;
+        padding-left: rem(18);
+      }
+
+      .right{
+        font-size: rem(14);
+        color: #5A98D2;
+        letter-spacing: rem(1.4);
+        text-align: right;
+        line-height: rem(14);
+        padding-right: rem(18);
+        display: flex;
+        align-items: center;
+      }
+
+    }
+    .selectContent{
+      flex: 1;
+      position: relative;
+      overflow-y: auto;
+
+      .tabCard{
+          height: rem(423);
+
+        .card{
+          display: flex;
+          align-items: center;
+          height: rem(44);
+          font-size: rem(14);
+          .cardName{
+            color: #333333;
+            margin-left: rem(6.5);
+          }
+          .cardNo{
+            color: #666666;
+            margin-left: rem(7);
+          }
+          .cardCheck{
+            margin-left: rem(7);
+          }
+          i{
+            display: inline-block;
+            width: rem(24);
+            height: rem(24);
+
+          }
+
+          .zsyh{
+            background: url("../../assets/img/zsyh.png");
+            background-size: cover;
+          }
+          .jsyh{
+            background: url("../../assets/img/jsyh.png");
+            background-size: cover;
+          }
+          .hxyh{
+            background: url("../../assets/img/jsyh.png");
+            background-size: cover;
+          }
+          .nyyh{
+            background: url("../../assets/img/nyyh.png");
+            background-size: cover;
+          }
+        }
+
+        .mountList{
+          label{
+            padding: rem(11) rem(4);
+          }
+          .yd-radio-text{
+            font-size: rem(12);
+            color: #333333;
+            letter-spacing: 0.51px;
+            text-align: center;
+          }
+        }
+
+        .merchTpList{
+          label{
+            padding: rem(11) rem(4);
+          }
+
+          .merchTp{
+
+            margin-left: rem(12);
+            i{
+              display: inline-block;
+              width: rem(18);
+              height: rem(18);
+              margin-right: rem(6);
+            }
+
+            .canyin{
+              background-image: url("../../assets/img/01.png");
+              background-size: cover;
+            }
+            .huobi{
+              background-image: url("../../assets/img/02.png");
+              background-size: cover;
+            }
+            .xiuxian{
+              background-image: url("../../assets/img/03.png");
+              background-size: cover;
+            }
+            .zhuanzhang{
+              background-image: url("../../assets/img/04.png");
+              background-size: cover;
+            }
+            .jiayou{
+              background-image: url("../../assets/img/05.png");
+              background-size: cover;
+            }
+          }
+        }
+
+      }
+    }
+
+
+  }
+
+}

@@ -18,7 +18,7 @@
         <yd-datetime type="date" class="time"
                      v-model="endTime"></yd-datetime>
       </div>
-      <div class="column" style="text-align: right">
+      <div class="column" @click="showSelectPanel" style="text-align: right">
         <img src="../../assets/img/select.png"></img>
       </div>
     </div>
@@ -50,7 +50,7 @@
         </yd-pullrefresh>
       </div>
     </div>
-
+    <selectPlugin :show="showSelect" @selectResult="changeSelect" @closeSelect="closeSelect"></selectPlugin>
   </div>
 
 </template>
@@ -60,6 +60,7 @@
     name: "order-list",
     data: function () {
       return {
+        showSelect:false,
         startTime: "2017-05-11",
         endTime: "2017-05-11",
         list: [
@@ -133,10 +134,18 @@
     methods: {
       handleEvents(type) {
         console.log('event: ', type)
-      }
-      ,
+      },
       refresh() {
         console.log("aaa")
+      },
+      changeSelect(result){
+         console.log(result)
+      },
+      showSelectPanel(){
+        this.$data.showSelect=!this.$data.showSelect;
+      },
+      closeSelect(){
+        this.$data.showSelect=false;
       },
       showWeek(item, index) {
         let pre={}
@@ -190,7 +199,7 @@
           case "01":
             return "餐饮";
           case "02":
-            return "货币";
+            return "交通";
           case "03":
             return "休闲";
           case "04":
