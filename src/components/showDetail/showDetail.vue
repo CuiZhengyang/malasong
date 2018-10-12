@@ -215,9 +215,9 @@
           case "02":
             return "交通";
           case "03":
-            return "休闲";
+            return "娱乐";
           case "04":
-            return "转账";
+            return "购物";
           case "05":
             return "加油";
           default:
