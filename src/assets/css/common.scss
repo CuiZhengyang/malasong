@@ -71,6 +71,25 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
   color:#AAAAAA;
 }
 
+ul.yd-tab-nav{
+  margin: 0 auto;
+}
+span.yd-navbar-center-title{
+  font-size: rem(18);
+  // font-size: 18px;
+  color: #333333;
+  letter-spacing: rem(3);
+  text-align: center;
+}
+.yd-popup-content{
+  border-radius: 5px;
+}
+
+
+
+
+
+
 
 //.yd-navbar-item {
 //  color: #fff;

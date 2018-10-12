@@ -48,7 +48,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         }
     },
     plugins: [
-        new OpenBrowserPlugin({url: openURL}),
+        // new OpenBrowserPlugin({url: openURL}),
         new webpack.DefinePlugin({
             'process.env': require('../config/dev.env')
         }),

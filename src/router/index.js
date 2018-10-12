@@ -5,6 +5,9 @@ import config from "../config/config"
 import {accessId, ShowToast} from "../request/request";
 import {Toast} from 'vue-ydui/dist/lib.rem/dialog';
 
+//fyye
+import Tables from '@/components/tables/tables'
+
 const Login = () => import(/* webpackChunkName: "Login" */ '@/components/Login/Login');
 const orderList = () => import(/* webpackChunkName: "Login" */ '@/components/orderList/orderList');
 Vue.use(Router);
@@ -15,6 +18,11 @@ let router = new Router({
       path: '/',
       name: 'orderList',
       component: orderList
+    },
+    {
+      path: '/tables',
+      name: 'tables',
+      component: Tables
     }
   ]
 });
