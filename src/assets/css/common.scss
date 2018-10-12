@@ -1,0 +1,310 @@
+@import "./fonction.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, a {
+  display: block;
+}
+label,span {
+  display: inline-block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+.yd-confirm-ft > a.primary {
+  font-size: rem(17);
+  color: #007AFF;
+}
+
+body {
+
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: PingFangSC-Regular;
+  background: #f5f5f5;
+}
+
+html, body {
+  height: 100%;
+}
+#app{
+  font-size: rem(15);
+}
+
+//.yd-toast-none-icon {
+//  position: absolute;
+//  bottom: 30px;
+//}
+//#app {
+
+input::-webkit-input-placeholder{
+  color:#AAAAAA;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+  color:#AAAAAA;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+  color:#AAAAAA;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+  color:#AAAAAA;
+}
+
+
+//.yd-navbar-item {
+//  color: #fff;
+//  font-size: rem(15) !important;
+//  i {
+//    display: inline-block;
+//    color: #ffffff !important;
+//    width: rem(18);
+//    height: rem(20);
+//  }
+//
+//  span{
+//    color: #fff;
+//  }
+//}
+//
+//.yd-cell-item {
+//  padding-left: rem(15);
+//  height: rem(48);
+//}
+//
+//.yd-cell-left {
+//  width: rem(50);
+//  font-size: rem(15);
+//  color: #333333
+//}
+//
+//.yd-cell-right {
+//  font-size: rem(15);
+//  text-align: left;
+//  color: #333333;
+//}
+//
+//.yd-cell-right .yd-input input {
+//  font-size: rem(15) !important;
+//  color: #333333;
+//}
+//
+//.yd-cell:after {
+//  border-bottom: 0;
+//}
+//
+//.yd-btn-block {
+//  height: rem(48);
+//  font-size: rem(17);
+//}
+//
+//.nextBtn {
+//  padding: 0 rem(15);
+//  position: relative;
+//  overflow: hidden;
+//}
+//
+//.nextBtnShade{
+//  position: relative;
+//  top:- rem(48);
+//  left: 0;
+//  z-index: 1000;
+//  //rgba(255,255,2555,0.5);
+//  background-color: white;
+//  opacity: 0.5;
+//}
+//
+//.yd-input-clear:after {
+//  font-size: rem(18);
+//  color: #AAAAAA;
+//}
+//
+//.yd-alert {
+//  width: rem(270);
+//  border-radius: 12px !important;
+//}
+//
+//.yd-confirm-bd {
+//  font-size: rem(17);
+//  color: #030303;
+//  letter-spacing: -0.41px;
+//}
+//
+//.yd-cell-arrow span {
+//  width: 100%;
+//}
+//
+//.yd-checkbox-text {
+//  color: #333333;
+//  font-size: rem(13);
+//}
+//
+//.yd-actionsheet {
+//  a {
+//    color: #333333;
+//    height: rem(48);
+//    font-size: rem(15);
+//    letter-spacing: -0.17px;
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//  }
+//  .yd-actionsheet-action {
+//    color: #5983DE;
+//    letter-spacing: -0.17px;
+//    margin-top: rem(20);
+//  }
+//  .yd-actionsheet-item:first-child {
+//    height: rem(40);
+//    font-size: rem(13);
+//    color: #999999;
+//    letter-spacing: -0.14px;
+//  }
+//  .yd-actionsheet-item:nth-child(2) {
+//    height: rem(40);
+//    color: #E78262;
+//    letter-spacing: -0.14px;
+//  }
+//}
+//
+//.yd-confirm {
+//  border-radius: 12px;
+//  width: rem(270);
+//  .yd-confirm-bd {
+//    font-size: rem(17);
+//    color: #030303;
+//    letter-spacing: -0.41px;
+//    text-align: center;
+//  }
+//  .yd-confirm-ft > a.default {
+//    font-size: rem(17);
+//    color: #007AFF;
+//  }
+//  .yd-confirm-ft > a.primary {
+//    font-size: rem(17);
+//    color: #007AFF;
+//  }
+//}
+//
+//.slot1 {
+//  .picker-item.picker-selected {
+//    font-size: rem(23.5);
+//    color: #000000;
+//    letter-spacing: 0.38px;
+//  }
+//  .picker-item {
+//    font-size: rem(19);
+//    //color: #000000;
+//    letter-spacing: 0.4px;
+//  }
+//}
+//
+//
+//.slot2 {
+//  width: 50%;
+//  float: left;
+//  .picker-item.picker-selected {
+//    font-size: rem(23.5);
+//    color: #000000;
+//    letter-spacing: 0.38px;
+//  }
+//  .picker-item {
+//    font-size: rem(19);
+//    //color: #000000;
+//    letter-spacing: 0.4px;
+//  }
+//}
+//
+//
+//.mint-popup.mint-popup-bottom {
+//  width: 100%;
+//  .popupbar{
+//    display: flex;
+//    flex-direction: row;
+//    align-items: center;
+//    height: rem(43.5);
+//    background: rgba(246,246,246,0.90);
+//    border-bottom: 1px solid #ddd;
+//    border-top: 1px solid #ddd;
+//    .popupbarlBt{
+//      flex: 0 1 rem(45);
+//      text-align: right;
+//      font-size: rem(15);
+//      color: #1A8BFF;
+//      letter-spacing: -0.17px;
+//    }
+//    .popupbarT{
+//      flex: 1;
+//      text-align: center;
+//      font-size: rem(17);
+//      color: #000000;
+//      letter-spacing: -0.19px;
+//    }
+//    .popupbarrBt{
+//      flex: 0 1 rem(45);
+//      text-align: left;
+//      font-size: rem(15);
+//      color: #1A8BFF;
+//      letter-spacing: -0.17px;
+//    }
+//  }
+//}
+//
+//.mint-popup .picker-items{
+//  height: rem(215);
+//}
+//
+//.merchantlist i.yd-next-icon{
+//  &:before{
+//    content: none;
+//  }
+//
+//  width: rem(7.5);
+//
+//
+//}
+//.merchantlist{
+//  .yd-checkbox{
+//    font-size: 0;
+//    padding-right:rem(16);
+//
+//    //span.yd-checkbox-icon{
+//    //  width: 18px!important;
+//    //  height:18px!important;
+//    //  //color: #3484f5!important;
+//    //}
+//    input{
+//      font-size: rem(14);
+//    }
+//  }
+//}
+//.yd-checkbox-icon{
+//  margin-bottom: rem(3.5);
+//}
+//
+//
+//  .yd-btn-disabled{
+//    background-color: white;
+//    color: #AAAAAA;
+//  }
+//
