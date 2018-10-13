@@ -1,31 +1,31 @@
 <template>
   <div>
     <!--<yd-navbar title="图表">-->
-      <!--<router-link to="#" slot="left">-->
-        <!--<yd-navbar-back-icon></yd-navbar-back-icon>-->
-      <!--</router-link>-->
-      <!--<router-link to="#" slot="right">-->
-        <!--<img id="compare" @click="pickAnother" src="../../assets/img/compare@3x.png" alt="对比">-->
-        <!--<yd-popup v-model="show1" position="center" width="80%" style="radius:5px;">-->
-          <!--<div style="background-color:#fff;height:100px;">-->
-            <!--<yd-datetime type="date"-->
-                         <!--style="height: 50px;line-height: 50px;text-align: center;width:49%;display:inline-block;font-size:20px;color:#000;"-->
-                         <!--v-model="startTime2"></yd-datetime>-->
-            <!--~-->
-            <!--<yd-datetime type="date"-->
-                         <!--style="height: 50px;line-height: 50px;text-align: center;width:49%;display:inline-block;font-size:20px;color:#000;"-->
-                         <!--v-model="endTime2"></yd-datetime>-->
-            <!--<p style="text-align: center;padding: 10px 0;">-->
-              <!--<yd-button style="width:50px;height:30px;font-size:14px;margin-right:50px;" type="hollow"-->
-                         <!--@click.native="getAnother">确定-->
-              <!--</yd-button>-->
-              <!--<yd-button style="width:50px;height:30px;font-size:14px;margin-left:50px;" type="hollow"-->
-                         <!--@click.native="show1 = false">取消-->
-              <!--</yd-button>-->
-            <!--</p>-->
-          <!--</div>-->
-        <!--</yd-popup>-->
-      <!--</router-link>-->
+    <!--<router-link to="#" slot="left">-->
+    <!--<yd-navbar-back-icon></yd-navbar-back-icon>-->
+    <!--</router-link>-->
+    <!--<router-link to="#" slot="right">-->
+    <!--<img id="compare" @click="pickAnother" src="../../assets/img/compare@3x.png" alt="对比">-->
+    <!--<yd-popup v-model="show1" position="center" width="85%" style="radius:5px;">-->
+    <!--<div style="background-color:#fff;height:110px;">-->
+    <!--<yd-datetime type="date"-->
+    <!--style="height: 50px;line-height: 50px;text-align: center;width:46%;display:inline-block;font-size:20px;color:#000;"-->
+    <!--v-model="startTime2"></yd-datetime>-->
+    <!--~-->
+    <!--<yd-datetime type="date"-->
+    <!--style="height: 50px;line-height: 50px;text-align: center;width:49%;display:inline-block;font-size:20px;color:#000;"-->
+    <!--v-model="endTime2"></yd-datetime>-->
+    <!--<p style="text-align: center;padding: 10px 0;">-->
+    <!--<yd-button style="width:50px;height:30px;font-size:14px;margin-right:50px;" type="hollow"-->
+    <!--@click.native="getAnother">确定-->
+    <!--</yd-button>-->
+    <!--<yd-button style="width:50px;height:30px;font-size:14px;margin-left:50px;" type="hollow"-->
+    <!--@click.native="show1 = false">取消-->
+    <!--</yd-button>-->
+    <!--</p>-->
+    <!--</div>-->
+    <!--</yd-popup>-->
+    <!--</router-link>-->
     <!--</yd-navbar>-->
     <div id="tables">
       <div id="datepick1">
@@ -88,8 +88,28 @@
       </div>
     </div>
     <div class="button-warper">
-      <yd-button size="large" type="primary" shape="circle" bgcolor="#f00" color="#fff" @click.native="handleClick">分享</yd-button>
+      <yd-button size="large" type="primary" shape="circle" bgcolor="#f00" color="#fff" @click.native="handleClick">分享
+      </yd-button>
     </div>
+    <yd-popup v-model="show1" position="center" width="85%" style="radius:5px;">
+      <div style="background-color:#fff;height:110px;">
+        <yd-datetime type="date"
+                     style="height: 50px;line-height: 50px;text-align: center;width:46%;display:inline-block;font-size:20px;color:#000;"
+                     v-model="startTime2"></yd-datetime>
+        ~
+        <yd-datetime type="date"
+                     style="height: 50px;line-height: 50px;text-align: center;width:46%;display:inline-block;font-size:20px;color:#000;"
+                     v-model="endTime2"></yd-datetime>
+        <p style="text-align: center;padding: 10px 0;">
+          <yd-button style="width:50px;height:30px;font-size:14px;margin-right:50px;" type="hollow"
+                     @click.native="getAnother">确定
+          </yd-button>
+          <yd-button style="width:50px;height:30px;font-size:14px;margin-left:50px;" type="hollow"
+                     @click.native="show1 = false">取消
+          </yd-button>
+        </p>
+      </div>
+    </yd-popup>
   </div>
 </template>
 
@@ -113,7 +133,7 @@
   import {ProgressBar} from 'vue-ydui/dist/lib.rem/progressbar';
   import {GridsGroup, GridsItem} from 'vue-ydui/dist/lib.rem/grids';
   import config from "../../config/config"
-  import {beforeEnterRouter,share} from "../../request/request"
+  import {beforeEnterRouter, share} from "../../request/request"
 
 
   Vue.component(NavBar.name, NavBar);
@@ -140,125 +160,128 @@
           precent: 56,
           value: 1000.89
         },
-        optionArr: [{
-          option: {
-            series: {
-              name: "yefy",
-              type: "pie",
-              radius: ["40%", "60%"],
-              sort: null,
-              label: {
-                position: "outside",
-                rotate: 0
-              },
-              data: [
-                {
-                  name: "餐饮",
-                  merchTp: "01",
-                  value: 100,
-                  precent: 20,
-                  number: 0
+        optionArr: [
+          {
+            option: {
+              series: {
+                name: "recorder1",
+                type: "pie",
+                radius: ["40%", "60%"],
+                sort: null,
+                label: {
+                  position: "outside",
+                  rotate: 0
                 },
-                {
-                  name: "交通",
-                  merchTp: "02",
-                  value: 54,
-                  precent: 20,
-                  number: 2
-                },
-                {
-                  name: "娱乐",
-                  merchTp: "03",
-                  value: 515,
-                  precent: 21,
-                  number: 3
-                },
-                {
-                  name: "购物",
-                  merchTp: "04",
-                  value: 321,
-                  precent: 21,
-                  number: 3
-                },
-                {
-                  name: '其他',
-                  merchTp: "05",
-                  value: 345,
-                  precent: 45,
-                  number: 5
-                }
-              ]
-            }
+                data: [
+                  {
+                    name: "餐饮",
+                    merchTp: "01",
+                    value: 100,
+                    precent: 20,
+                    number: 0
+                  },
+                  {
+                    name: "交通",
+                    merchTp: "02",
+                    value: 54,
+                    precent: 20,
+                    number: 2
+                  },
+                  {
+                    name: "娱乐",
+                    merchTp: "03",
+                    value: 515,
+                    precent: 21,
+                    number: 3
+                  },
+                  {
+                    name: "购物",
+                    merchTp: "04",
+                    value: 321,
+                    precent: 21,
+                    number: 3
+                  },
+                  {
+                    name: '其他',
+                    merchTp: "05",
+                    value: 345,
+                    precent: 45,
+                    number: 5
+                  }
+                ]
+              }
+            },
+            showInfo: {
+              precent: 56,
+              value: 1000.89
+            },
+            total: 1234
           },
-          showInfo: {
-            precent: 56,
-            value: 1000.89
-          },
-          total: 1234
-        }, {
-          option: {
-            series: {
-              name: "yefy",
-              type: "pie",
-              radius: ["40%", "60%"],
-              sort: null,
-              label: {
-                position: "outside",
-                rotate: 0
-              },
-              data: [
-                {
-                  name: "餐饮",
-                  merchTp: "01",
-                  value: 100,
-                  precent: 20,
-                  number: 0
-                },
-                {
-                  name: "交通",
-                  merchTp: "02",
-                  value: 54,
-                  precent: 20,
-                  number: 2
-                },
-                {
-                  name: "娱乐",
-                  merchTp: "03",
-                  value: 515,
-                  precent: 21,
-                  number: 3
-                },
-                {
-                  name: "购物",
-                  merchTp: "04",
-                  value: 321,
-                  precent: 21,
-                  number: 3
-                },
-                {
-                  name: '其他',
-                  merchTp: "05",
-                  value: 345,
-                  precent: 45,
-                  number: 5
-                }
-              ]
-            }
-          },
-          showInfo: {
-            precent: 56,
-            value: 1000.89
-          },
-          total: 1234
-        }],
-        total: 14314,
+          //   {
+          //   option: {
+          //     series: {
+          //       name: "yefy",
+          //       type: "pie",
+          //       radius: ["40%", "60%"],
+          //       sort: null,
+          //       label: {
+          //         position: "outside",
+          //         rotate: 0
+          //       },
+          //       data: [
+          //         {
+          //           name: "餐饮",
+          //           merchTp: "01",
+          //           value: 100,
+          //           precent: 20,
+          //           number: 0
+          //         },
+          //         {
+          //           name: "交通",
+          //           merchTp: "02",
+          //           value: 54,
+          //           precent: 20,
+          //           number: 2
+          //         },
+          //         {
+          //           name: "娱乐",
+          //           merchTp: "03",
+          //           value: 515,
+          //           precent: 21,
+          //           number: 3
+          //         },
+          //         {
+          //           name: "购物",
+          //           merchTp: "04",
+          //           value: 321,
+          //           precent: 21,
+          //           number: 3
+          //         },
+          //         {
+          //           name: '其他',
+          //           merchTp: "05",
+          //           value: 345,
+          //           precent: 45,
+          //           number: 5
+          //         }
+          //       ]
+          //     }
+          //   },
+          //   showInfo: {
+          //     precent: 56,
+          //     value: 1000.89
+          //   },
+          //   total: 1234
+          // }
+        ],
+
       };
     },
     created() {
       this.$nextTick(() => {
 
 
-        this.refresh(1);
+        this.refresh1();
       })
     },
     mounted() {
@@ -271,8 +294,8 @@
       // this.$data.startTime = "2018-06-04";
     },
     methods: {
-      handleClick(){
-        share("云闪付账单","这是一个人的账单","",location.href)
+      handleClick() {
+        share("云闪付账单", "这是一个人的账单", "", location.href)
       },
       onClick(event, instance, echarts) {
         console.log(arguments[0].data);
@@ -285,14 +308,75 @@
         console.log("getAnother");
         this.$data.picked = true
         this.$data.show1 = false
-        this.refresh(this.$data.startTime2, this.$data.endTime2, 2)
+        // this.refresh(this.$data.startTime2, this.$data.endTime2, 2)
+        if(this.$data.optionArr.length<2){
+          this.$data.optionArr.push({
+            option: {
+              series: {
+                name: "recoder2",
+                type: "pie",
+                radius: ["40%", "60%"],
+                sort: null,
+                label: {
+                  position: "outside",
+                  rotate: 0
+                },
+                data: [
+                  {
+                    name: "餐饮",
+                    merchTp: "01",
+                    value: 1465.12,
+                    precent: 46,
+                    number: 3
+                  },
+                  {
+                    name: "交通",
+                    merchTp: "02",
+                    value: 124.30,
+                    precent: 12,
+                    number: 32
+                  },
+                  {
+                    name: "娱乐",
+                    merchTp: "03",
+                    value: 167.21,
+                    precent: 11,
+                    number: 3
+                  },
+                  {
+                    name: "购物",
+                    merchTp: "04",
+                    value: 321,
+                    precent: 20,
+                    number:6
+                  },
+                  {
+                    name: '其他',
+                    merchTp: "05",
+                    value: 345,
+                    precent: 21,
+                    number: 5
+                  }
+                ],
+                total: 1034
+              }
+            },
+            showInfo: {
+              precent: 100,
+              value: 2035.01
+            },
+            total: 2035.01
+
+          })
+        }
+
       },
       refresh1() {
         let startTime = new Date(this.$data.startTime)
         let endTime = new Date(this.$data.endTime)
         if (endTime > startTime) {
           console.log("updata date1");
-          this.refresh(1)
+          this.refresh(this.$data.startTime, this.$data.endTime, 1)
         }
       },
       refresh(date1, date2, flag) {
@@ -301,8 +385,8 @@
             cardNo: this.$store.state.cardList.join("|"),
             startDate: date1 || this.$store.state.startTime,
             endDate: date2 || this.$store.state.endTime,
-            bigAmount: arr[0],
-            smallAmount: arr[1],
+            bigAmount: arr[1],
+            smallAmount: arr[0],
             merchtp: this.$store.state.merchTpList.join("|"),
             page: 0,
             pagesize: config.const.pagesize
@@ -399,9 +483,11 @@
             dateEnd: ''
           };
           if (flag == 1) {
-            this.$data.optionArr[0] = finalData;
+            this.$data.optionArr.unshift(finalData);
+            this.$data.optionArr.splice(1, 1);
           } else if (flag == 2) {
-            this.$data.optionArr[1] = finalData;
+            this.$data.optionjArr.pop();
+            this.$data.optionArr.push(finalData);
           }
         })
       },
@@ -415,10 +501,10 @@
 <style lang='scss' scoped>
   @import "../../assets/css/fonction.scss";
 
-
-  .button-warper{
+  .button-warper {
     padding: rem(20) rem(18);
   }
+
   .echarts {
     width: 100%;
     height: rem(200);

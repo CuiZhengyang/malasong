@@ -13,7 +13,7 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT);
-let openURL = `http://${HOST || config.dev.host}:${PORT || config.dev.port}${config.dev.assetsPublicPath}index.html?accessId=${config.dev.accessId}#/`;
+let openURL = `http://${HOST || config.dev.host}:${PORT || config.dev.port}${config.dev.assetsPublicPath}index.html#/`;
 
 const devWebpackConfig = merge(baseWebpackConfig, {
     module: {
@@ -48,7 +48,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         }
     },
     plugins: [
-        // new OpenBrowserPlugin({url: openURL}),
+        new OpenBrowserPlugin({url: openURL}),
         new webpack.DefinePlugin({
             'process.env': require('../config/dev.env')
         }),
